@@ -1,0 +1,12 @@
+site_name: TogetherMap Docs
+theme: flatly
+pages:
+  - Home: index.md
+  - Getting Started: getting_started.md
+  - Next Steps:
+      - 'Getting Hooked': 'hooked.md'
+      - 'The Basics': 'basics.md'
+      - 'Images': 'images.md'
+      - 'Permissions': 'permissions.md'
+      - 'Extras': 'extras.md'
+      - 'Customization': 'customization.md'
