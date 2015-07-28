@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>Permissions - TogetherMap Docs</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../tm.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">TogetherMap Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../getting_started/">Getting Started</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Next Steps <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../hooked/">Getting Hooked</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../basics/">The Basics</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../images/">Images</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="./">Permissions</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../extras/">Extras</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../customization/">Customization</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../images/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../extras/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#accessing-permissions">Accessing Permissions</a></li>
+        
+    
+        <li class="main "><a href="#kinds-of-permissions">Kinds of Permissions</a></li>
+        
+    
+        <li class="main "><a href="#making-a-collection-private">Making a Collection Private</a></li>
+        
+    
+        <li class="main "><a href="#configurating-a-private-collection">Configurating a Private Collection</a></li>
+        
+    
+        <li class="main "><a href="#accepting-permissions">Accepting Permissions</a></li>
+        
+    
+        <li class="main "><a href="#login-not-required-for-read-access">Login Not Required for Read Access</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h2 id="accessing-permissions">Accessing Permissions</h2>
+<p>Permissions are accessed by going to the collection page and clicking on the button for permissions.  Only collection creators and those with owner permissions can change permissions on a collection.</p>
+<h2 id="kinds-of-permissions">Kinds of Permissions</h2>
+<p>There are 4 kinds of permissions in TM.</p>
+<ul>
+<li>owners</li>
+<li>place writers (placers for short)</li>
+<li>post writers (posters for short)</li>
+<li>readers</li>
+</ul>
+<p>Owners can edit collection attributes and set permissions, place writers can add places to a collection, post writers cannot add places but can make new topics, comments and vote, and readers can only browse a collection but cannot add or edit any content.</p>
+<p>Note that these permissions are hierarchical, i.e. all place writers are post writers and all post writers are readers and all owners have all available permissions.</p>
+<h2 id="making-a-collection-private">Making a Collection Private</h2>
+<p>After clicking the permissions button, you will see 4 buttons, one for each of the 4 kinds of permissions.  Click each button to see the permission settings for that type of permission.</p>
+<p>First you will see a button to make a collection "private."  By default, when created all collections are public place writable (which implies public readable and public post writable).  To give someone permission, the collection first has to be private for that permission.  Click on private to do this.</p>
+<p>In this case private collections are hierarchical in the opposite order, i.e. post private collections are all place private and read private collections are all post private (this happens automatically).</p>
+<h2 id="configurating-a-private-collection">Configurating a Private Collection</h2>
+<p>Once you've made a collection private you will see widgets to configure permissions.</p>
+<p>At the top you will see a list of users that have that permission, each with a remove button which would revoke that permission.</p>
+<p>Note: public owner collections do not exist - you must give ownership explicitely.</p>
+<p>Giving permissions roughly works the same as Google Docs - i.e. send links to people that to whom you want to give the permission.  To get the link that bestows a given kind of permission, just click the "link" button and the link will be copied to the clipboard for you to, most likely, paste into an email to send to a collaborator.  </p>
+<p>Additionally you can click the "generate" button if you think someone has access to the link that you did not intend, and when you click generate all previous links will no longer give access to the bearers of that link.  </p>
+<p>Finally, at the bottom will be a button to make the collection "public" again.</p>
+<h2 id="accepting-permissions">Accepting Permissions</h2>
+<p>When a user clicks on the link that is copied above (to provide a given permission), they will be taken to a page in TM which provides the description of the collection, allows the user to login, at which point they can click on an "accept" button which bestows the permission.  When a permission is accepted the collection is automatically followed for that user.</p>
+<h2 id="login-not-required-for-read-access">Login Not Required for Read Access</h2>
+<p>As a small caveat, read access by default does not require the user to login and "accept" permissions.  This is similar to Google Docs, where anyone with a link can view.  </p>
+<p>In TM though, for a person to edit a place or make a post to a private collection, they must be logged in and "accept" the permissions.  </p>
+<p>An additional button is provided for read permissions to change the default to require that a user be logged in and accept read permission (in this way the user can be tracked and the permission revoked, although this is not common).</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+    </body>
+</html>
