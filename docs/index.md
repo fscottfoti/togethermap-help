@@ -14,13 +14,25 @@ Generally, our mission is to provide an app for people to talk about what's happ
 
 ## Examples
 
-* Loading scraped web data of recent condo developments in San Francisco and talking about them.
-![](img/sfdev.png)
-* Building a list of your favorite nearby places for friends that are visiting from out of town.
-![](img/nearby.png)
-* Adding pictures of places to photo blog your travels.
-![](img/vacation.png)
-* Collecting data about places using web forms.
+#### Loading scraped web data of recent condo developments in San Francisco and talking about them.
+![](img/devs.png)
+
+<br>
+
+#### Building a list of your favorite nearby places for friends that are visiting from out of town.
+![](img/places.png)
+
+<br>
+
+#### Adding pictures of places to photo blog your travels.
+![](img/pics.png)
+
+<br>
+
+#### Collecting data about places using web forms.
 ![](img/data.png)
-* We intend to support worldwide use, like this collection of condo developments in Korea.
-![](img/korean.png)
+
+<br>
+
+#### We intend to support worldwide use, like this collection of condo developments in Korea.
+![](img/korea.png)
