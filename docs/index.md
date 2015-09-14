@@ -1,4 +1,4 @@
-# Make maps of things, then talk about them.
+# TogetherMap: Collaborative Mapping for Web and Mobile
 
 ## The Name
 
@@ -14,17 +14,17 @@ Generally, our mission is to provide an app for people to talk about what's happ
 
 ## Examples
 
+#### Simple collections of places, like saving your favorite parks.
+![](img/parks.png)
+
+<br>
+
 #### Loading scraped web data of recent condo developments in San Francisco and talking about them.
 ![](img/devs.png)
 
 <br>
 
-#### Building a list of your favorite nearby places for friends that are visiting from out of town.
-![](img/places.png)
-
-<br>
-
-#### Adding pictures of places to photo blog your travels.
+#### Importing pictures of places from other websites.
 ![](img/pics.png)
 
 <br>
@@ -34,5 +34,10 @@ Generally, our mission is to provide an app for people to talk about what's happ
 
 <br>
 
-#### We intend to support worldwide use, like this collection of condo developments in Korea.
+#### International use cases, like this collection of condo developments in Korea.
 ![](img/korea.png)
+
+<br>
+
+#### Custom theming of spatial data.
+![](img/theming.png)

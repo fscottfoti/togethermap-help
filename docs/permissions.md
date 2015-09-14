@@ -1,6 +1,6 @@
 ## Accessing Permissions
 
-Permissions are accessed by going to the collection page and clicking on the button for permissions.  Only collection creators and those with owner permissions can change permissions on a collection.
+Permissions are accessed by going to the collection page and clicking on edit and then clicking on the button for permissions (the eye with a line through it).  Only collection creators and those with owner permissions can change permissions on a collection.
 
 ## Kinds of Permissions
 
@@ -11,19 +11,19 @@ There are 4 kinds of permissions in TM.
 * post writers (posters for short)
 * readers
 
-Owners can edit collection attributes and set permissions, place writers can add places to a collection, post writers cannot add places but can make new topics, comments and vote, and readers can only browse a collection but cannot add or edit any content.
+Owners can edit collection attributes and set permissions, place writers can add places to a collection, post writers cannot add places but can make comments and vote, and readers can only browse a collection but cannot add or edit any content.
 
 Note that these permissions are hierarchical, i.e. all place writers are post writers and all post writers are readers and all owners have all available permissions.
 
 ## Making a Collection Private
 
-After clicking the permissions button, you will see 4 buttons, one for each of the 4 kinds of permissions.  Click each button to see the permission settings for that type of permission.
+After clicking the permissions button, you will see 4 links for each of the 4 kinds of permissions.  Click each link to see the permission settings for that type of permission.
 
 First you will see a button to make a collection "private."  By default, when created all collections are public place writable (which implies public readable and public post writable).  To give someone permission, the collection first has to be private for that permission.  Click on private to do this.
 
 In this case private collections are hierarchical in the opposite order, i.e. post private collections are all place private and read private collections are all post private (this happens automatically).
 
-## Configurating a Private Collection
+## Configuring a Private Collection
 
 Once you've made a collection private you will see widgets to configure permissions.
 
@@ -31,9 +31,9 @@ At the top you will see a list of users that have that permission, each with a r
 
 Note: public owner collections do not exist - you must give ownership explicitely.
 
-Giving permissions roughly works the same as Google Docs - i.e. send links to people that to whom you want to give the permission.  To get the link that bestows a given kind of permission, just click the "link" button and the link will be copied to the clipboard for you to, most likely, paste into an email to send to a collaborator.  
+Giving permissions roughly works the same as Google Docs - i.e. send links to people to whom you want to give the permission.  To get the link that bestows a given kind of permission, just click the "link" button and the link will be copied to the clipboard for you to, most likely, paste into an email to send to a collaborator.  
 
-Additionally you can click the "generate" button if you think someone has access to the link that you did not intend, and when you click generate all previous links will no longer give access to the bearers of that link.  
+Additionally you can click the "generate" button to generate a new link if you think someone has access to the link that should not have access, which will invalidate all previous links for this permission.  
 
 Finally, at the bottom will be a button to make the collection "public" again.
 

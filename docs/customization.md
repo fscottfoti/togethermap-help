@@ -1,6 +1,6 @@
 ## Customization
 
-All the customization discussed here will be made on the collection settings page, which can be reached by clicking the "Edit" button on the collection page.  The "Edit" button will only be avialable if you have owner permissions on the collection.  Once you're on the "Edit" page you will need to click "More" to get to the expert settings discussed here.
+All the customization discussed here will be made on the collection settings page, which can be reached by clicking the "Edit" icon on the collection page.  The "Edit" icon will only be avialable if you have owner permissions on the collection.  Once you're on the "Edit" page you will need to click the down arrow at the button of the page to get to the expert settings discussed here.
 
 As a word of warning, a modest amount of programming is requried to customize the templates in TogetherMap.  This will likely be configurable in the interface in the future, but programming is the only completely general solution that takes advantage of some wonderful open source tools that have been made available on the web.  As you will soon see, the basics can be done with no previous programming knowledge, and with only the basics you can do some very powerful things in TM.
 
@@ -27,7 +27,7 @@ OK, that's easy enough, but what about the shape arribute?  In fact, there is a 
 
 ## JSON in TM
 
-Let's imagine a coworker sent you a shapefile and you imported it into TM.  You don't even really know what attributes are in the shapefile.  Worry not.  Once the data is in TM, that is now our problem.  Under the first text area is a button with the text "JSON" on it.  Click it and it will give you a formatted sample object from this collection.  I will print one below so you're not too worried when you see a place with it's full complexity.  
+Let's imagine a coworker sent you a shapefile and you imported it into TM.  You don't even really know what attributes are in the shapefile.  Worry not.  Once the data is in TM, that is now our problem.  Under the first text area is a button with a "code" icon on it.  Click it and it will give you a formatted sample object from this collection.  One is printed below so that you won't be too worried when you see a place with it's full complexity.  
 
 So what do you need to know about this?  Not as much as you'd think.  The magic is all in the "properties" sub-dictionary, and you will see "properties" come up a lot in TM templates.  "properties" is part of the GeoJSON spec and allows us to conform with existing conventions - this is where all of the attributes go.  There are also some higher level attributes which TM adds, like createDate, updateDate, and creator which might be of some use, but for the most part, everything you need is under "properties".  
 
@@ -146,16 +146,16 @@ There's actually quite a bit more configuration that can be done with autoform, 
 {
   residentialUnits: {
     label: "Number of residential units in development:",
-    type: Number,
+    type: "Number",
     min: 0
   },
   nonResidentialSqft: {
     label: "Number of non-res square footage:",
-    type: Number,
+    type: "Number",
     min: 0
   },
   hasBikeParking: {
-    type: String,
+    type: "String",
     label: "Has bike parking:",
     allowedValues: [
        "Yes", "No", "Don't know"
