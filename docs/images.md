@@ -1,4 +1,4 @@
-### Images
+## Images
 
 If Pinterest has taught us anything, it's that images are the lifeblood of the web, and TogetherMap is no exception.  We highly reccommend adding images wherever possible in TM to liven things up a bit, but this is entirely up to the user.  
 
@@ -6,7 +6,7 @@ The easiest way to add images to TM is by clicking the image button on every col
 
 Note that this does *not* give us access to your accounts, you simply choose which content you want to move to TM so that you can organize and view it on a map.
 
-### Other Image Sources
+## Other Image Sources
 
 **Not to be underestimated is the "web images" option which allows you to quickly do a web search for images and find a picture of a place to add to TM.**
 
@@ -23,7 +23,7 @@ To import a Flickr collection, simply click "Import" in the left-side menu and l
 Every image will now be added to TogetherMap with a marker, and the collection and place pages will work the same as any other collection on TM.  As with any other collection, you can add place names and descriptions, which you can use to annotate your photo collection from Flickr (possibly even easier than you can do so on Flickr). 
 Finally, there is one additional feature: under any Flickr collection, after you click to edit the collection, there is a *refresh* button, which when clicked will import any *new* photos that are not present in the current collection.  This allows you to continually add photos to the Flickr album and synchronize to TM without losing any of the edits you've made on TM.
 
-### Setting the permissions correctly on the Flickr Album
+## Setting the permissions correctly on the Flickr Album
 
 Unfortunately there's one caveat.  Although the TM side of an import is utterly trivial, setting up permissions on the Flickr side to make the album public, and to make the geocodes public is slightly less then trivial.  (Note that to use Flickr import in TogetherMap, the album must be public.  If it's private you can still import indidivdual photos using the process described above.)
 
