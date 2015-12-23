@@ -1,12 +1,14 @@
 ## Customization
 
-All the customization discussed here will be made on the collection settings page, which can be reached by clicking the "Edit" icon on the collection page.  The "Edit" icon will only be avialable if you have owner permissions on the collection.  Once you're on the "Edit" page you will need to click the down arrow at the button of the page to get to the expert settings discussed here.
+All the customization discussed here will be made on the collection settings page, which can be reached by clicking the "Edit" icon on the collection page.  The "Edit" icon will only be avialable if you have owner permissions on the collection.  Once you're on the "Edit" page you will need to click the down arrow at the bottom of the page to get to the expert settings discussed here.
 
-As a word of warning, a modest amount of programming is requried to customize the templates in TogetherMap.  This will likely be configurable in the interface in the future, but programming is the only completely general solution that takes advantage of some wonderful open source tools that have been made available on the web.  As you will soon see, the basics can be done with no previous programming knowledge, and with only the basics you can do some very powerful things in TM.
+As a word of warning, a modest amount of programming is requried to customize the templates in TogetherMap.  As you will soon see, some of the basics can be done with modest amount of programming knowledge, and with the framework described here you can do some very powerful things in TM.
 
 ## Shapefiles
 
-Shapefiles are the lifeblood of GIS.  Although TM isn't GIS, we can start with shapefiles because shapefiles are the most common way to 1) define a shape and 2) associate attributes with a shape.  That's good because we *will* want to associate attribtues with a shape.  In our example, let's say we have a set of shapes, each of which has a name, description, and image url.
+Shapefiles are the lifeblood of GIS.  Although TM isn't GIS, we can start with shapefiles because shapefiles are the most common way to 1) define a shape and 2) associate attributes with a shape.  In our example, let's say we have a set of shapes, each of which has a name, description, and image url.
+
+**It's worth digressing here to point out that executing a couple of provided Python scripts is the easiest way to get shapefiles into and out of TM (and is required for large shapefiles).  This is documented on the [GitHub Page](http://github.com/mapcraftlabs/togethermap).**
 
 ## JSON
 
@@ -23,7 +25,7 @@ Instead of shapefiles, the vernacular of the web is JSON.  JSON is essentially a
 
 ## GeoJSON
 
-OK, that's easy enough, but what about the shape arribute?  In fact, there is a whole specification for representing shapes in JSON called [GeoJSON](http://geojson.org/) and this is the preferred way to represent shapes on the web rather than shapefiles.  TM uses GeoJSON.  In practive, you will never, ever have to know how shapes are stored.  TM does this for you.  You only need to know how to turn the attributes into text or into marker themes.
+OK, that's easy enough, but what about the shape arribute?  In fact, there is a whole specification for representing shapes in JSON called [GeoJSON](http://geojson.org/) and this is the preferred way to represent shapes on the web rather than shapefiles.  TM uses GeoJSON.  With TM, you will never, ever have to know how shapes are stored.  TM does this for you.  You only need to know how to turn the attributes into text or into marker themes.
 
 ## JSON in TM
 
@@ -31,7 +33,7 @@ Let's imagine a coworker sent you a shapefile and you imported it into TM.  You 
 
 So what do you need to know about this?  Not as much as you'd think.  The magic is all in the "properties" sub-dictionary, and you will see "properties" come up a lot in TM templates.  "properties" is part of the GeoJSON spec and allows us to conform with existing conventions - this is where all of the attributes go.  There are also some higher level attributes which TM adds, like createDate, updateDate, and creator which might be of some use, but for the most part, everything you need is under "properties".  
 
-Here you see name, image_url, and we'll use "caption" instead of "description."  Note that the "name" attribute on the place is what gets filled in the text box when you edit a place, and the "description" is filled in by the text editor.  The other attributes you can edit when on the place edit page are "icon", "icon_size", and "color".  Note that these correspond to the 5 html form elements that you see on every place edit page.
+Here you see name, image_url, and we'll use "caption" instead of "description."  Note that the "name" attribute on the place is what gets filled in the text box when you edit a place, and the "description" is filled in by the text editor.  The other attributes you can edit when on the place edit page are "icon", "icon_size", and "color".  Note that these correspond to the 5 html form elements that you see on every place edit page (this is because the most basic, default, mode for a TM collection is simply making and editing markers - if you make custom theming functions, these form elements will disappear because they aren't needed anymore).
 
 ```javascript
 {

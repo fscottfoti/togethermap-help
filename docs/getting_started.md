@@ -2,11 +2,11 @@
 
 *I see places, votes, and comments mentioned a lot - what are those?*
 
-Places are shapes on the map.  They can be markers, lines, or free-form shapes.
+Places are just shapes on the map.  They can be markers, lines, or free-form shapes.  We come from a GIS (Geographic Information Systems) background but we're hoping to conceptualize spatial data in a slightly more web-friendly way.
 
-Votes allows you to up and down-vote places within a collection, so you can keep track of consensus of a group, for instance.
+Votes allow you to up and down-vote places within a collection, so you can keep track of consensus of a group, for instance.
 
-Comments are responses about that place, similar to any other web comment board, except with a focus on a particular place.
+Comments are responses about a given place, similar to any other web comment board, except with a focus on a particular place.
 
 ## Collections
 
@@ -24,20 +24,14 @@ Nonetheless, a great many use cases involve collecting place data within a singl
 
 My favorite basic use case is to collect places I want to remember - e.g. a set of coffee shops I might want to go to.  So let's assume you and a few friends want to build a collection of the best coffee shops for working in San Francisco.
 
-* First move the map to San Francisco (or to wherever you are) by searching for a nearby place using the magnifying glass button on the map, or just drag the map to your preferred location.
+* First move the map to San Francisco (or to wherever you are) by searching for a nearby location using the magnifying glass button on the map (similar to what you would do with Google Maps), or just drag the map to your preferred location.
 
 * Next make a new collection by opening the side menu (using the triple bars, called the "Hamburger") and "New".  This creates a new collection with the default name, which you can change to "Fave Coffee" or something similar.  You can also move the map around a bit to your preferred default view for this collection and click the "devault view" button (the triangle rotated to the right) to save the current map as the default view.
 	
 	Click the left arrow to go the collection page for this collection.  In TM everything is saved automatically as you change things (so be sure to change it back if you didn't intend the change).
 
-* Next click the Hamburger and then "Search".  By default TM searches the place database provided by Factual, Inc. in order to get a great starter set of places in the world.  Factual keeps a fairly up-to-date list of all the coffee shops, restaurants, parks, dentists, and so forth (over 65 million places worldwide).  Put "coffee" into the search box and TM begins to search automatically.
+* Next add places to the map using the "draw" tool in the lower left hand corner.  Click on the small button that is 3rd from the bottom (the one that looks like a marker).  This is the "add marker" button.  Once you click you will have a marker attached to the cursor and you can move this marker to any location on the map and click to drop the marker.  
+	
+	This will take you to the "place edit" page where you can change the name and add a description of this coffee shop, or maybe add a photo.  Continue adding places  until you have several coffee shops, and keep in mind that you can share this map with others and they can contibute to build a map of yo
 
-* Now there's a set of places on the map that have all been returned from a Factual search.  Most are coffee shops, and all have some connection to coffee.  Click on one, possibly a nearby coffee shop that you know.  Or search for a specific coffee shop.  TM will search outside of the current view, so you might need to click on the location icon (triangle rotated to the right) to pan to each place.  
-
-	When you click on a place, TM will bring up the place detail page with additional information about the place, and a conversation thread to begin making comments about the palce.
-
-	For now click the copy icon.  A list of your collections comes up - both collections you created and collections you follow.  Click on "Fave Coffee" and the place gets added to the collection you created above.
-
-	Repeat these steps for other coffee shops you want to add to your map.  It's all downhill from here.
-
-
+	*On mobile this is even easier, but a little bit different.*  See "Adding Places on Mobile" under "The Basics."

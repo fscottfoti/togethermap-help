@@ -2,7 +2,7 @@
 
 Most of the basic menu operations happen by clicking the "Hamburger" in the upper left of the navbar.  This pulls out a left-side menu like many mobile sites.  You can then click "Collections" to get access to the list of collections, or "New" for a new colleciton, or "Import" to bring in external shape data.
 
-You also login using the left-hand side menu.  You must be logged to create or edit content on TM so we can associate your data with your account.  If you're logged in to a private collection, your data is as secure as your online bank.
+You also login using the left-hand side menu.  You must be logged in to create or edit content on TM so we can associate your data with your account.  If you're logged in to a private collection, we'll make every effort to keep your data secure (assuming you don't make the collection public).
 
 ## The Map View
 
@@ -12,9 +12,9 @@ Along the left hand side are the zoom in and zoom out buttons and the geocoding 
 
 ## Collection Page
 
-Navigation typically happens by clicking "Collections" from the left-side menu.  You can then browse to collections you own, collections you follow, and other public collections.  When a collection is clicked, you get up to 100 places in the map view for that collection, and the sidebar contains a description of the collection.  If there are more than 100 places in the map view where you are, you might need to zoom in to load more places.  
+Navigation typically happens by clicking "Collections" from the left-side menu.  You can then browse to collections you own, collections you follow, and other public collections (which are kept in the gallery).  When a collection is clicked, you get up to 100 places in the map view for that collection (the one's closest to the map center), and the sidebar contains a description of the collection.  If there are more than 100 places in the map view where you are, you might need to pan around to load more places.  
 
-If you click the button for "Recent" you will get the most recent comments for the collection (to get recent places, click the sort button and "recent" to sort by the most recent places).  You may also up or down vote the collection here.  
+If you click the button for "Recent" you will get the most recent comments for the collection (to get recent places, click the sort button and "recent" to sort by the most recent places).
 
 If you have "owner" permissions on the collection, you will be able to edit the collection configuration and set the permissions, which will be explained in the [customization](customization.md) and [permissions](permissions.md) pages respectively.  
 
@@ -26,17 +26,17 @@ The collection page also includes a scrollable list of all the places currently 
 
 Click on a place, either in the map view or in the place list in the collection view, and you will arrive on the place page.  The place page mainly is to provide the place (pun intended) to have a conversation about the place.  
 
-Below the place description is a list of current comments about this place.  From this page you can also vote the place up or down, copy it to another collection, or edit the place properties, including marker icon, color, and size (small, medium, and large), as well as set a default image for the place.
+Below the place description is a list of current comments about this place.  From this page you can also vote the place up or down or edit the place properties, including marker icon, color, and size (small, medium, and large), as well as set a default image for the place.
 
 ## Adding Places
 
-If you have place adding permissions for a given collection (which you always have if you created or own the collection), then you will see a toolbar at the bottom left hand corner of the map (you will not see this toolbar if you don't have permissions).  From the bottom, the icons are for delete, edit, marker add, polygon add, and line add.  The last 3 add the main 3 kinds of shapes in any spatial information system and TM is no expection.
+If you have place adding permissions for a given collection (which you always have if you created or own the collection), then you will see a toolbar at the bottom left hand corner of the map (you will not see this toolbar if you don't have permissions).  From the bottom, the icons are for delete, edit, marker add, polygon add, and line add.  The last 3 add the main 3 kinds of shapes in any geographic information system and TM is no expection.
 
 TM uses the wonderful library [Leaflet](http://leafletjs.com/) as it's mapping library, and this drawing toolbar is the [Leaflet Draw](https://github.com/Leaflet/Leaflet.draw) widget.  A pretty great blog to understand the breadth of this plugin is provided [here](http://www.d3noob.org/2014/01/using-leafletdraw-plugin-for-leafletjs.html).
 
 But we think its use is pretty simple.  The shape creation buttons use tooltips to show how to use them.  As a quick reminder, click the last point twice to finish drawing a line, and click the first point a second time to close a polygon.
 
-If you click the edit button, you now enter a mode where you can drag any marker on the map to a new location, which is always fun but use wisely.  The delete button allows you to remove places from the map with a click.  The should *definitely* be used wisely.  Places can also be deleted by clicking the edit button on the place page and then the delete button.  As a reminder, only owners of the collection or the creators of each place will have the permissions to delete each place.
+If you click the edit button on the toolbar, you now enter a mode where you can drag any marker on the map to a new location, which is always fun but use wisely.  The delete button allows you to remove places from the map with a click.  The should *definitely* be used wisely.  Places can also be deleted by clicking the edit button on the place page and then the delete button.  As a reminder, only owners of the collection or the creators of each place will have the permissions to delete each place.
 
 ## Adding Places Redux
 
