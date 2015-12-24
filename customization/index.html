@@ -173,10 +173,11 @@
             <div class="section">
               
                 <h2 id="customization">Customization</h2>
-<p>All the customization discussed here will be made on the collection settings page, which can be reached by clicking the "Edit" icon on the collection page.  The "Edit" icon will only be avialable if you have owner permissions on the collection.  Once you're on the "Edit" page you will need to click the down arrow at the button of the page to get to the expert settings discussed here.</p>
-<p>As a word of warning, a modest amount of programming is requried to customize the templates in TogetherMap.  This will likely be configurable in the interface in the future, but programming is the only completely general solution that takes advantage of some wonderful open source tools that have been made available on the web.  As you will soon see, the basics can be done with no previous programming knowledge, and with only the basics you can do some very powerful things in TM.</p>
+<p>All the customization discussed here will be made on the collection settings page, which can be reached by clicking the "Edit" icon on the collection page.  The "Edit" icon will only be avialable if you have owner permissions on the collection.  Once you're on the "Edit" page you will need to click the down arrow at the bottom of the page to get to the expert settings discussed here.</p>
+<p>As a word of warning, a modest amount of programming is requried to customize the templates in TogetherMap.  As you will soon see, some of the basics can be done with modest amount of programming knowledge, and with the framework described here you can do some very powerful things in TM.</p>
 <h2 id="shapefiles">Shapefiles</h2>
-<p>Shapefiles are the lifeblood of GIS.  Although TM isn't GIS, we can start with shapefiles because shapefiles are the most common way to 1) define a shape and 2) associate attributes with a shape.  That's good because we <em>will</em> want to associate attribtues with a shape.  In our example, let's say we have a set of shapes, each of which has a name, description, and image url.</p>
+<p>Shapefiles are the lifeblood of GIS.  Although TM isn't GIS, we can start with shapefiles because shapefiles are the most common way to 1) define a shape and 2) associate attributes with a shape.  In our example, let's say we have a set of shapes, each of which has a name, description, and image url.</p>
+<p><strong>It's worth digressing here to point out that executing a couple of provided Python scripts is the easiest way to get shapefiles into and out of TM (and is required for large shapefiles).  This is documented on the <a href="http://github.com/mapcraftlabs/togethermap">GitHub Page</a>.</strong></p>
 <h2 id="json">JSON</h2>
 <p>Instead of shapefiles, the vernacular of the web is JSON.  JSON is essentially a Javascript object which is a key value dictionary that is human readable.  For our example, you need only deal with one object at a time.  TogetherMap takes care of reading the places from the database, synchronizing updates between users and many other things.  Here is a sample place.</p>
 <pre><code class="javascript">{
@@ -188,11 +189,11 @@
 </code></pre>
 
 <h2 id="geojson">GeoJSON</h2>
-<p>OK, that's easy enough, but what about the shape arribute?  In fact, there is a whole specification for representing shapes in JSON called <a href="http://geojson.org/">GeoJSON</a> and this is the preferred way to represent shapes on the web rather than shapefiles.  TM uses GeoJSON.  In practive, you will never, ever have to know how shapes are stored.  TM does this for you.  You only need to know how to turn the attributes into text or into marker themes.</p>
+<p>OK, that's easy enough, but what about the shape arribute?  In fact, there is a whole specification for representing shapes in JSON called <a href="http://geojson.org/">GeoJSON</a> and this is the preferred way to represent shapes on the web rather than shapefiles.  TM uses GeoJSON.  With TM, you will never, ever have to know how shapes are stored.  TM does this for you.  You only need to know how to turn the attributes into text or into marker themes.</p>
 <h2 id="json-in-tm">JSON in TM</h2>
 <p>Let's imagine a coworker sent you a shapefile and you imported it into TM.  You don't even really know what attributes are in the shapefile.  Worry not.  Once the data is in TM, that is now our problem.  Under the first text area is a button with a "code" icon on it.  Click it and it will give you a formatted sample object from this collection.  One is printed below so that you won't be too worried when you see a place with it's full complexity.  </p>
 <p>So what do you need to know about this?  Not as much as you'd think.  The magic is all in the "properties" sub-dictionary, and you will see "properties" come up a lot in TM templates.  "properties" is part of the GeoJSON spec and allows us to conform with existing conventions - this is where all of the attributes go.  There are also some higher level attributes which TM adds, like createDate, updateDate, and creator which might be of some use, but for the most part, everything you need is under "properties".  </p>
-<p>Here you see name, image_url, and we'll use "caption" instead of "description."  Note that the "name" attribute on the place is what gets filled in the text box when you edit a place, and the "description" is filled in by the text editor.  The other attributes you can edit when on the place edit page are "icon", "icon_size", and "color".  Note that these correspond to the 5 html form elements that you see on every place edit page.</p>
+<p>Here you see name, image_url, and we'll use "caption" instead of "description."  Note that the "name" attribute on the place is what gets filled in the text box when you edit a place, and the "description" is filled in by the text editor.  The other attributes you can edit when on the place edit page are "icon", "icon_size", and "color".  Note that these correspond to the 5 html form elements that you see on every place edit page (this is because the most basic, default, mode for a TM collection is simply making and editing markers - if you make custom theming functions, these form elements will disappear because they aren't needed anymore).</p>
 <pre><code class="javascript">{
   &quot;_id&quot;: &quot;7yqXaYKi3ZbaLCemM&quot;,
   &quot;geometry&quot;: {
@@ -249,13 +250,8 @@
 &lt;br&gt;&lt;br&gt;
 </code></pre>
 
-<p>That's really all you need to know to make a nicely formatted page, and a place page created by this template is shown below.  If you're an intermediate to advanced web programmer, you should know that these templates are rendered with <a href="http://handlebarsjs.com/">handlebarsjs</a> which is a very powerful templating library, and everything it can do TM can do.
-<br>
-<div align="center">
-<img src="../img/place.png" style="width: 350px">
-</div>
-<br>
-The user also controls the template for the "Place List" which is the list of places below the collection description, and the one for our sample collection looks like this:</p>
+<p>That's really all you need to know to make a nicely formatted page, and a place page created by this template is shown below.  If you're an intermediate to advanced web programmer, you should know that these templates are rendered with <a href="http://handlebarsjs.com/">handlebars.js</a> which is a very powerful templating library, and everything it can do TM can do.</p>
+<p>The user also controls the template for the "Place List" which is the list of places below the collection description, and the one for our sample collection looks like this:</p>
 <pre><code class="html">&lt;h4&gt;{{properties.name}}&lt;/h4&gt;
 
 {{#if properties.url}}
@@ -280,10 +276,10 @@ The user also controls the template for the "Place List" which is the list of pl
 
 <p>Short and sweet.  The popup doesn't have much room, so we display the name and a thumbnail version of the image.  That's it, there's nothing more to it.</p>
 <h2 id="autoform">Autoform</h2>
-<p>Now let's assume your friend didn't send you a shapefile that had shapes and attributes and you need to create that information directly in TM.  We already know how to make the shapes from the discussion on <a href="../basics/">Adding Places</a>.  What's new in this section is how your users can easily enter attributes on TM, which we do this using HTML forms. </p>
-<p>TM does this in a spcial way which uses the <a href="http://autoform.meteor.com/">Autoform</a> package from the Meteor framework.  Using this package you no longer have to painstakingly write the HTML by hand, you just configure the form with a JSON spec and TM will take care of rendering the form.  </p>
+<p>Now let's assume your friend didn't send you a shapefile that had shapes and attributes and you need to create that information directly in TM.  We already know how to make the shapes from the discussion on <a href="../basics/">Adding Places</a>.  What's new in this section is how your users can easily enter attributes on TM, which we do using HTML forms. </p>
+<p>TM does this using the <a href="http://autoform.meteor.com/">Autoform</a> package from the Meteor framework.  Using this package you no longer have to painstakingly write the HTML by hand, you just configure the form with a JSON spec and TM will take care of rendering the form.  </p>
 <p>For instance, let's say you want to record the number of residential units (a number), the number of non-residential square feet (another number), and a drop down for "has bike parking" which can take the values of yes, no, and maybe.  No problem.  The code to create that form is shown below, which includes some extra formatting information for how to label each element in the form, and to make sure we don't allow negative numbers for the counts we want to record.  </p>
-<p>There's actually quite a bit more configuration that can be done with autoform, and we suggest you go directly to the <a href="http://autoform.meteor.com/quickform">autoform playground</a> to build your form on their website.  You can then copy the JSON back to the text area on TM and we will add a form on <em>the edit page</em> of every place to collect attributes about that place.  These attributes can then be rendered in the HTML templates described above, or the themes described below, or even exported into a shapefile for further analysis outside of TM.</p>
+<p>There's actually quite a bit more configuration that can be done with autoform, and we suggest you go directly to the <a href="http://autoform.meteor.com/quickform">autoform playground</a> to build your form on their website.  You can then copy the JSON back to the text area on TM and we will add a form on <em>the edit page</em> for every place to collect attributes about that place.  These attributes can then be rendered in the HTML templates described above, or the themes described below, or even exported into a shapefile for further analysis outside of TM.</p>
 <pre><code class="javascript">{
   residentialUnits: {
     label: &quot;Number of residential units in development:&quot;,
@@ -308,7 +304,7 @@ The user also controls the template for the "Place List" which is the list of pl
 <p><br>
 ...which creates the form that looks like this:</p>
 <p><img alt="" src="../img/data.png" /></p>
-<p>...and can be seen in action on <a href="https://togethermap.com/collection_edit/fpT5BHZtx9CjnymQN">this</a> collection.</p>
+<p>...and can be seen in action on <a href="https://togethermap.com/collection/shtbABLxD8MaQKCWw">this</a> collection.</p>
 <h2 id="theming-functions">Theming Functions</h2>
 <p>Now let's say your friend sent you a shapefile with some numbers already entered (probably the old way, using some desktop GIS tool), and these numbers represent new buildings in San Francisco.  The buildings can be office buildings, residential buildings, and can vary in size from just a few townhomes to hundreds and hundreds of upscale condos.  </p>
 <p>In fact, with web maps we can change the size of markers, the colors, and the icons, and our goal is to make each building show up on a web map as a marker with a certain "theme" - in other words, we want to map certain attributes in the shapefile to certain traits of the markers.  </p>
@@ -318,7 +314,7 @@ The user also controls the template for the "Place List" which is the list of pl
 <p>First we specify the icon.  TM uses the Maki icons which are described (and can be searched) <a href="https://www.mapbox.com/maki/">here</a>.  All you have to do to specify the icon is to return the name of one of the icons that's shown at the link above.  In this example, we want to to use the icon for "building" when there are residential units and "commercial" when there are not.</p>
 <p>To do this we use the ternary (question mark) operator in Javascript.  Note that in our functions the variable "p" is set to the "properties" dictionary we discussed above (the one that contains the attributes we always care about).  What this code says is that if the attribute "Units" is greater than zero, return the string "building", otherwise return "commercial", and TM takes care of the rest for you.</p>
 <p>Two things to remember since this is Javascript.  First, it's very easy to create errors because this is relatively free-form coding, and second, you can open the console in the Chrome browser to see those errors and get a hint as to what you might be doing wrong.  Since this is coding, you won't get it right the first time and will have to hone in on the desired behavior by trial and error.  We promise we will make this easier in the future, but until then I feel confident you can do it!</p>
-<p><em>Remember that you have to refresh the page in order to re-render the markers, so every change you make in the theming functions you will need to refresh to see the results.</em></p>
+<p><em>Remember that you have to refresh the page in order to re-render the markers, so for every change you make in the theming functions you will need to refresh to see the results.</em></p>
 <pre><code class="javascript">return p.Units &gt; 0 ? &quot;building&quot; : &quot;commercial&quot;;
 </code></pre>
 
@@ -328,7 +324,7 @@ if(p.Units &gt; 30 || p.TotalSqftEstim &gt; 25000) return 'm';
 return 's';
 </code></pre>
 
-<p>Next is the icon color function.  This is very similar to the others but returns a color value.  These colors can be hex numbers - you can search Google for a hex "color picker" and use your favorite from the web and just copy the value in here.  It can also return simple colors like "blue", "red", "yellow", etc, but these colors are less nuanced obviously.</p>
+<p>Next is the icon color function.  This is very similar to the others but returns a color value.  These colors can be hex numbers - you can search Google for a hex "color picker" or use your favorite from the web and just copy the value in here.  It can also return simple colors like "blue", "red", "yellow", etc, but these colors are less nuanced obviously.</p>
 <p>This function says, first check if there are no residential units, if so return a blue color.  After that we know that the building is residential, but if it <em>also</em> contains commercial (the next line), we return purple.  Then if it's a <em>large</em> building return red and otherwise return yellow.  And that's how we choose the colors you see in the image above.</p>
 <p>The one thing worth noting on this example is that you can use the <code>p.Units</code> notation if the attribute doesn't have weird characters in it, but you have to use <code>p['WHATEVER']</code> notation if it does, which is why we have to do <code>p['Total GSF (Commercial)']</code>.  Otherwise you should have seen all this before.</p>
 <pre><code class="javascript">if(!p.Units) return '544FDB';
