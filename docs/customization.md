@@ -98,12 +98,8 @@ The name is rendered as header, the url as a link, caption as normal text, and t
 <br><br>
 ```
 
-That's really all you need to know to make a nicely formatted page, and a place page created by this template is shown below.  If you're an intermediate to advanced web programmer, you should know that these templates are rendered with [handlebarsjs](http://handlebarsjs.com/) which is a very powerful templating library, and everything it can do TM can do.
-<br>
-<div align="center">
-<img src="../img/place.png" style="width: 350px">
-</div>
-<br>
+That's really all you need to know to make a nicely formatted page, and a place page created by this template is shown below.  If you're an intermediate to advanced web programmer, you should know that these templates are rendered with [handlebars.js](http://handlebarsjs.com/) which is a very powerful templating library, and everything it can do TM can do.
+
 The user also controls the template for the "Place List" which is the list of places below the collection description, and the one for our sample collection looks like this:
 
 ```html
@@ -170,7 +166,7 @@ There's actually quite a bit more configuration that can be done with autoform, 
 
 ![](img/data.png)
 
-...and can be seen in action on [this](https://togethermap.com/collection/fpT5BHZtx9CjnymQN) collection.
+...and can be seen in action on [this](https://togethermap.com/collection/shtbABLxD8MaQKCWw) collection.
 
 ## Theming Functions
 
