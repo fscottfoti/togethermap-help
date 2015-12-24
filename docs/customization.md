@@ -136,13 +136,13 @@ Short and sweet.  The popup doesn't have much room, so we display the name and a
 
 ## Autoform
 
-Now let's assume your friend didn't send you a shapefile that had shapes and attributes and you need to create that information directly in TM.  We already know how to make the shapes from the discussion on [Adding Places](basics.md).  What's new in this section is how your users can easily enter attributes on TM, which we do this using HTML forms. 
+Now let's assume your friend didn't send you a shapefile that had shapes and attributes and you need to create that information directly in TM.  We already know how to make the shapes from the discussion on [Adding Places](basics.md).  What's new in this section is how your users can easily enter attributes on TM, which we do using HTML forms. 
 
-TM does this in a spcial way which uses the [Autoform](http://autoform.meteor.com/) package from the Meteor framework.  Using this package you no longer have to painstakingly write the HTML by hand, you just configure the form with a JSON spec and TM will take care of rendering the form.  
+TM does this using the [Autoform](http://autoform.meteor.com/) package from the Meteor framework.  Using this package you no longer have to painstakingly write the HTML by hand, you just configure the form with a JSON spec and TM will take care of rendering the form.  
 
 For instance, let's say you want to record the number of residential units (a number), the number of non-residential square feet (another number), and a drop down for "has bike parking" which can take the values of yes, no, and maybe.  No problem.  The code to create that form is shown below, which includes some extra formatting information for how to label each element in the form, and to make sure we don't allow negative numbers for the counts we want to record.  
 
-There's actually quite a bit more configuration that can be done with autoform, and we suggest you go directly to the [autoform playground](http://autoform.meteor.com/quickform) to build your form on their website.  You can then copy the JSON back to the text area on TM and we will add a form on *the edit page* of every place to collect attributes about that place.  These attributes can then be rendered in the HTML templates described above, or the themes described below, or even exported into a shapefile for further analysis outside of TM.
+There's actually quite a bit more configuration that can be done with autoform, and we suggest you go directly to the [autoform playground](http://autoform.meteor.com/quickform) to build your form on their website.  You can then copy the JSON back to the text area on TM and we will add a form on *the edit page* for every place to collect attributes about that place.  These attributes can then be rendered in the HTML templates described above, or the themes described below, or even exported into a shapefile for further analysis outside of TM.
 
 ```javascript
 {
@@ -170,7 +170,7 @@ There's actually quite a bit more configuration that can be done with autoform, 
 
 ![](img/data.png)
 
-...and can be seen in action on [this](https://togethermap.com/collection_edit/fpT5BHZtx9CjnymQN) collection.
+...and can be seen in action on [this](https://togethermap.com/collection/fpT5BHZtx9CjnymQN) collection.
 
 ## Theming Functions
 
@@ -190,7 +190,7 @@ To do this we use the ternary (question mark) operator in Javascript.  Note that
 
 Two things to remember since this is Javascript.  First, it's very easy to create errors because this is relatively free-form coding, and second, you can open the console in the Chrome browser to see those errors and get a hint as to what you might be doing wrong.  Since this is coding, you won't get it right the first time and will have to hone in on the desired behavior by trial and error.  We promise we will make this easier in the future, but until then I feel confident you can do it!
 
-*Remember that you have to refresh the page in order to re-render the markers, so every change you make in the theming functions you will need to refresh to see the results.*
+*Remember that you have to refresh the page in order to re-render the markers, so for every change you make in the theming functions you will need to refresh to see the results.*
 
 ```javascript
 return p.Units > 0 ? "building" : "commercial";
@@ -204,7 +204,7 @@ if(p.Units > 30 || p.TotalSqftEstim > 25000) return 'm';
 return 's';
 ```
 
-Next is the icon color function.  This is very similar to the others but returns a color value.  These colors can be hex numbers - you can search Google for a hex "color picker" and use your favorite from the web and just copy the value in here.  It can also return simple colors like "blue", "red", "yellow", etc, but these colors are less nuanced obviously.
+Next is the icon color function.  This is very similar to the others but returns a color value.  These colors can be hex numbers - you can search Google for a hex "color picker" or use your favorite from the web and just copy the value in here.  It can also return simple colors like "blue", "red", "yellow", etc, but these colors are less nuanced obviously.
 
 This function says, first check if there are no residential units, if so return a blue color.  After that we know that the building is residential, but if it *also* contains commercial (the next line), we return purple.  Then if it's a *large* building return red and otherwise return yellow.  And that's how we choose the colors you see in the image above.
 
