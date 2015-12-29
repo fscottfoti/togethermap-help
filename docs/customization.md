@@ -252,5 +252,22 @@ Enabling advanced controls will add a few widgets for the user on the collection
 
 * Active Theme - If muultiple themes are configure on the collection edit page, the user can switch between themes.
 
+## Filters
+
+Once the switch is turned on to enable advanced controls, the owner of a collection can configure filters to be available to the user of the collection.  These are added in the "Filter Name" and "Filter" text boxes (the user of the collection sees the name but not the filter).  Click the "save filter" button to save the filter.  Current filters can also be browsed (using the dropdown) and the displayed filter can be deleted using the "delete filter" button.
+
+These filters are Meteor Mongo [selectors to the find method](http://docs.meteor.com/#/full/find).  Here are a few examples:
+
+* An simple filter which limits to office buildings: `{"properties.general_type": "Office"}`.
+* A filter which limits to buildings where total_residential_units is bigger than 40: `{"properties.total_residential_units": {"$gt": 40}}`
+* A more general filter which uses a "where" clause which compares two different properties: `{"$where":"this.properties.max_dua_au > this.properties.max_dua_np"}`
+* A filter which uses the type attribute of the geojson geometry: `{"geometry.type": "MultiPolygon"}`
+
+## Multiple Themes
+
+Once the switch is turned on to enable advanced controls, the owner of a collection can configure multiple themes which are available to the user of the collection.  Each theme has a name, which is added in the "Theme Name" text box and then saved with the "New Theme" button.  The active theme is then selected by picking the name in the dropdown, and the current theme can be deleted with the "Delete Theme" button.  (Note this should sound very similar to how filters are configured above.)  
+
+At this point, you select a theme name which shows you the current icon, size, and color theming functions for that theme. Simply edit these functions for this theme using the same instructions as for a single theme.  Each theme that is configured is then made available for the user of the collection to switch between.  
+
 
 
