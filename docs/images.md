@@ -1,6 +1,6 @@
 ## Images
 
-If Pinterest has taught us anything, it's that images are the lifeblood of the web, and TogetherMap has several bits of functionality to make assocating images with places and collections fairly easy.  We highly reccommend adding images wherever possible in TM to liven things up a bit, but this depends on the use case somewhat.  
+If Pinterest has taught us anything, it's that images are the lifeblood of the web, and TogetherMap has several bits of functionality to make assocating images with places and collections fairly easy.  We highly reccommend adding images wherever possible in TM to liven things up a bit, but this depends on the use case.  
 
 The easiest way to add images to TM is by clicking the image button on every collection edit or place edit page.  When you click this button, this will open up the image selection dialog that is provided to us by [filepicker.com](https://www.filepicker.com/).  This part should be fairly easy to figure out, but note that filepicker connects you to your account for Box, Dropbox, Facebook, Google Drive, Flickr, Instagram, and Picasa all within this easy-to-use interface.  
 

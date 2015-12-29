@@ -1,8 +1,8 @@
 ## Customization
 
-All the customization discussed here will be made on the collection settings page, which can be reached by clicking the "Edit" icon on the collection page.  The "Edit" icon will only be avialable if you have owner permissions on the collection.  Once you're on the "Edit" page you will need to click the down arrow at the bottom of the page to get to the expert settings discussed here.
+All the customization discussed here is made on the collection settings page, which can be reached by clicking the "Edit" icon on the collection page.  The "Edit" icon will only be avialable if you have owner permissions on the collection.  Once you're on the "Edit" page you will need to click the down arrow at the bottom of the page to get to the configuration settings discussed here.
 
-As a word of warning, a modest amount of programming is requried to customize the templates in TogetherMap.  As you will soon see, some of the basics can be done with modest amount of programming knowledge, and with the framework described here you can do some very powerful things in TM.
+As a word of warning, a modest amount of programming is requried to customize the templates in TogetherMap.  As you will soon see, some of the basics can be done without expert programming knowledge, and with the framework described here you can do some very powerful things in TM.
 
 ## Shapefiles
 
@@ -25,7 +25,7 @@ Instead of shapefiles, the vernacular of the web is JSON.  JSON is essentially a
 
 ## GeoJSON
 
-OK, that's easy enough, but what about the shape arribute?  In fact, there is a whole specification for representing shapes in JSON called [GeoJSON](http://geojson.org/) and this is the preferred way to represent shapes on the web rather than shapefiles.  TM uses GeoJSON.  With TM, you will never, ever have to know how shapes are stored.  TM does this for you.  You only need to know how to turn the attributes into text or into marker themes.
+OK, that's easy enough, but what about the shape arribute?  In fact, there is a whole specification for representing shapes in JSON called [GeoJSON](http://geojson.org/) and this is the preferred way to represent shapes on the web rather than shapefiles.  TM uses GeoJSON.  With TM, you will never, ever have to know how shapes are stored.  TM does this for you.  You only need to know how to turn the attributes into text or into marker and shape themes.
 
 ## JSON in TM
 
@@ -33,7 +33,7 @@ Let's imagine a coworker sent you a shapefile and you imported it into TM.  You 
 
 So what do you need to know about this?  Not as much as you'd think.  The magic is all in the "properties" sub-dictionary, and you will see "properties" come up a lot in TM templates.  "properties" is part of the GeoJSON spec and allows us to conform with existing conventions - this is where all of the attributes go.  There are also some higher level attributes which TM adds, like createDate, updateDate, and creator which might be of some use, but for the most part, everything you need is under "properties".  
 
-Here you see name, image_url, and we'll use "caption" instead of "description."  Note that the "name" attribute on the place is what gets filled in the text box when you edit a place, and the "description" is filled in by the text editor.  The other attributes you can edit when on the place edit page are "icon", "icon_size", and "color".  Note that these correspond to the 5 html form elements that you see on every place edit page (this is because the most basic, default, mode for a TM collection is simply making and editing markers - if you make custom theming functions, these form elements will disappear because they aren't needed anymore).
+Here you see name, image_url, and we'll use "caption" instead of "description."  The "name" attribute on the place is what gets filled in the text box when you edit a place, and the "description" is filled in by the text editor.  The other attributes you can edit when on the place edit page are "icon", "icon_size", and "color".  Note that these correspond to the 5 html form elements that you see on every place edit page (this is because the most basic, default, mode for a TM collection is simply making and editing markers using the UI - if you create and use custom theming functions, these form elements will disappear because they aren't needed anymore).
 
 ```javascript
 {
@@ -76,7 +76,7 @@ Here you see name, image_url, and we'll use "caption" instead of "description." 
 
 Templates are how you turn JSON to HTML.  Your web browser visualizes only HTML but JSON is the data which "backs" the HTML.  For instance, we'll want to format and display the name as a header, the description as normal text, and the image_url as an image.  You can see the actual collection we're trying to create [here](https://togethermap.com/collection/ecGPcWi4XRDvMHLSp).
 
-The first template that we can configure is the "Place Template (for Place Detail)".  This is the template that is used on the place page.  The actual template for the collection above is shown here.  Here we're substituting in the name, url, image_url, and caption properties into a small html snippet.
+The first template that we can configure is the "Place Template (for Place Detail)".  This is the template that is used on the [place page](https://togethermap.com/place/ecGPcWi4XRDvMHLSp/kHkExXP8cdWLfNeGi).  The actual template for the collection above is shown here, where we're substituting the name, url, image_url, and caption properties into a small html snippet.
 
 The name is rendered as header, the url as a link, caption as normal text, and the image url as an image.  It's pretty much that simple.  Note that the double curly braces mean to substitute that attribute as text and the triple curly braces mean that attribute is *already* html and should be rendered as html.
 
@@ -98,9 +98,9 @@ The name is rendered as header, the url as a link, caption as normal text, and t
 <br><br>
 ```
 
-That's really all you need to know to make a nicely formatted page, and a place page created by this template is shown below.  If you're an intermediate to advanced web programmer, you should know that these templates are rendered with [handlebars.js](http://handlebarsjs.com/) which is a very powerful templating library, and everything it can do TM can do.
+That's really all you need to know to make a nicely formatted page, and a place page created by this template is located [here](https://togethermap.com/place/ecGPcWi4XRDvMHLSp/kHkExXP8cdWLfNeGi).  If you're an intermediate to advanced web programmer, you should know that these templates are rendered with [handlebars.js](http://handlebarsjs.com/) which is a very powerful templating library, and everything it can do TM can do.
 
-The user also controls the template for the "Place List" which is the list of places below the collection description, and the one for our sample collection looks like this:
+The user also controls the template for the "Place List" which is the list of places below the collection description, and the one for our [sample collection](https://togethermap.com/collection/ecGPcWi4XRDvMHLSp/) looks like this:
 
 ```html
 <h4>{{properties.name}}</h4>
@@ -178,13 +178,13 @@ We do that in TM with "theming functions" which are next in the collection edit 
 
 As an example, we're trying to build the theme shown in the screenshot below.  This is available as a live demo [here](https://togethermap.com/collection_edit/-JiizFSQYiP6dtHLTqV5).  This data is the actual development pipeline provided by the San Francisco Planning Department for late 2012 and early 2013.
 
-![](img/themed.png)
+![](img/theming.png)
 
 First we specify the icon.  TM uses the Maki icons which are described (and can be searched) [here](https://www.mapbox.com/maki/).  All you have to do to specify the icon is to return the name of one of the icons that's shown at the link above.  In this example, we want to to use the icon for "building" when there are residential units and "commercial" when there are not.
 
 To do this we use the ternary (question mark) operator in Javascript.  Note that in our functions the variable "p" is set to the "properties" dictionary we discussed above (the one that contains the attributes we always care about).  What this code says is that if the attribute "Units" is greater than zero, return the string "building", otherwise return "commercial", and TM takes care of the rest for you.
 
-Two things to remember since this is Javascript.  First, it's very easy to create errors because this is relatively free-form coding, and second, you can open the console in the Chrome browser to see those errors and get a hint as to what you might be doing wrong.  Since this is coding, you won't get it right the first time and will have to hone in on the desired behavior by trial and error.  We promise we will make this easier in the future, but until then I feel confident you can do it!
+Two things to remember since this is Javascript...  First, it's very easy to create errors because this is relatively free-form coding, and second, you can open the console in the Chrome browser to see those errors and get a hint as to what you might be doing wrong.  Since this is coding, you won't get it right the first time and will have to hone in on the desired behavior by trial and error.  We promise we will make this easier in the future, but until then I feel confident you can do it!
 
 *Remember that you have to refresh the page in order to re-render the markers, so for every change you make in the theming functions you will need to refresh to see the results.*
 
@@ -202,7 +202,7 @@ return 's';
 
 Next is the icon color function.  This is very similar to the others but returns a color value.  These colors can be hex numbers - you can search Google for a hex "color picker" or use your favorite from the web and just copy the value in here.  It can also return simple colors like "blue", "red", "yellow", etc, but these colors are less nuanced obviously.
 
-This function says, first check if there are no residential units, if so return a blue color.  After that we know that the building is residential, but if it *also* contains commercial (the next line), we return purple.  Then if it's a *large* building return red and otherwise return yellow.  And that's how we choose the colors you see in the image above.
+This function says: first check if there are no residential units and if so return a blue color.  After that we know that the building is residential, but if it *also* contains commercial (the next line), we return purple.  Then if it's a *large* building return red and otherwise return yellow.  And that's how we choose the colors you see in the image above.
 
 The one thing worth noting on this example is that you can use the `p.Units` notation if the attribute doesn't have weird characters in it, but you have to use `p['WHATEVER']` notation if it does, which is why we have to do `p['Total GSF (Commercial)']`.  Otherwise you should have seen all this before.
 
@@ -212,7 +212,11 @@ if(p['Total GSF (Commercial)'] > 500) return '9D28E0';
 return p.Units > 120 ? 'E02850' : 'E0DD28';
 ```
 
-That's pretty much it.  With the above configuration, you can do pretty much anything in TM - you can record information from your users, you can use that data to theme the map, and you can use the same data to make html templates in the place detail view, the place list view, and the labels.  Please feel free to ask questions - we'd love to help!
+That's pretty much it.  With the above configuration, you can do most of what TM supports - you can record information from your users, you can use that data to theme the map, and you can use the same data to make html templates in the place detail view, the place list view, and the labels.  Please feel free to ask questions - we'd love to help!
+
+## Enable up- and down-voting
+
+This switch adds thumbs up and thumbs down widgets on every place so your users can upvote and downvote places.  An upvote will increase the rating of a place by 1, and a downvote will decrease the rating by one.  Places can then be sorted by rating.
 
 ## Drop Markers
 
@@ -220,5 +224,33 @@ There are a few other on/off attributes in the collection edit view that will be
 
 ## Turning off the Geoindex
 
-The "geoindex" can also be turned on and off.  The geoindex is the functionality that limits the places that are loaded to only those shown in the map view.  If you had hundreds of thousands of city markers worldwide, you would just want to load the few cities that are in the map view, so this is turned on by default.  If you have less than a hundred places or so, it's usually fine to turn this off, which loads all the places in the collection immediately and can be handy for subsequent responsiveness and also so that all the places are in the list view all the time which is perhaps easier for users to understand on small collections.  At any rate, it's up to the collection owner how they choose to set this.
+The "geoindex" can be turned on and off.  The geoindex is the functionality that limits the places that are loaded to only those shown in the map view.  If you had hundreds of thousands of city markers worldwide, you would just want to load the few cities that are in the map view, so this is turned on by default.  If you have less than a hundred places or so, it's usually fine to turn this off, which loads all the places in the collection immediately and can be handy for subsequent responsiveness and also so that all the places are in the list view all the time which is perhaps easier for users to understand on small collections.  At any rate, it's up to the collection owner how they choose to set this.
+
+## Marker clustering
+
+Marker clustering is a handy feature which uses the [Leaflet clustering plugin](https://github.com/Leaflet/Leaflet.markercluster) to cluster markers together.  This uses a single marker to represent many markers when zoomed out and then "splays" them out as the user zooms in.  This is handy if you have lots and lots of markers on the map.  It does not work well with the editing features in TogetherMap though, and should be considered as an experimental feature for TM at this time.
+
+## Disable place list
+
+The place list on the collection page can be disabled either 1) to speed up the rendering of the DOM or 2) simply because a place list is not desired.  This is not terribly common.
+
+## Enable advanced controls
+
+This enables advanced controls on a collection, which allows the configuration of multiple themes on the collection, and multiple filters, and provides some additional widgets on the collection page.  This assumes that both the collection owner and user are a little bit more advanced than the users assumed up to this point, and represents a push of functionality from a potentially consumer app to having some of the features common in professional GIS systems.  These changes will be discussed next.
+
+# Advanced Controls
+
+## Collection Widgets (for the user)
+
+Enabling advanced controls will add a few widgets for the user on the collection page.  These widgets are described below:
+
+* Auto-load (on/off) - The collection is now assumed to be large, with potentially millions of shapes.  In this case we want more fine-grained control over when places load.  The user can now turn off auto-load so that when the map is panned or zoomed, no places are loaded.
+
+* The More Button - By default, 100 shapes are loaded nearest to the map center, and for every click of the more button, 100 more shapes are loaded.
+
+* Active Filter - If filters are configured on the collection edit page, the user can switch between filters, only displaying certain shapes on the map based on attributes of the shapes.
+
+* Active Theme - If muultiple themes are configure on the collection edit page, the user can switch between themes.
+
+
 

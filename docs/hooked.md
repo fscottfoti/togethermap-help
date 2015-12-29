@@ -2,7 +2,7 @@ OK, if you're following along you will have a collection with a few coffee shops
 
 ## Grab a Friend
 
-The fun of TogetherMap is the collaborative spirit of mapping in real time.  We've all used Google Docs at this point - well, real time collaboration is quickly becoming a commodity on the internet and yet there's no map app that I know of that's done this real time functionality for maps.
+The fun of TogetherMap is the collaborative spirit of mapping in real time.  We've all used Google Docs at this point - well, real time collaboration is quickly becoming a commodity on the internet and yet there's no map app that I know of that's built this real time functionality into a mapping app.
 
 Do you have that friend yet?  If you don't have that friend handy, you can open up a second browser, get your cell phone, or whatever.  The point is - when you add a place in TM, anyone else following that collection gets the update immediately (without a reload), and can respond with their own edits.  
 
@@ -10,4 +10,4 @@ This is true almost everywhere in TM.  Comments are made in real time on places 
 
 ## Place-based Conversations
 
-A big part of that is place-based commenting.  It's a pretty simple addition to an idea that's everywhere on the web.  Basically you have a conversation thread tied to each and every place you make. 
+A big part of TM is place-based commenting.  It's a pretty simple addition to an idea that's everywhere on the web.  Basically you have a conversation thread tied to each and every place you make.  Make a comment and see what other followers of the collection have to say in response. 

@@ -19,7 +19,7 @@ Note that these permissions are hierarchical, i.e. all place writers are post wr
 
 After clicking the permissions button, you will see 4 buttons for each of the 4 kinds of permissions.  Click each button to see the current permission settings for that type of permission.
 
-By default, when created all collections are "anyone with a link can view," but you must add users explicitely in order to allow posting and place making.
+By default, when created all collections are "anyone with a link can view," but you must add users explicitly in order to allow posting and place making.
 
 Private collections are hierarchical in the opposite order, i.e. post private collections are all place private and read private collections are all post private.  So if you wanted to allow public contribution of places, click "public" on the posting and placing tabs.
 
